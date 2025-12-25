@@ -2,6 +2,9 @@
 #include <gtk/gtk.h>
 #include <curl/curl.h>
 
+struct widgetMain {
+    GtkWidget *windowMain;
+}widgetMain;
 static void activate (GtkApplication *app,gpointer user_data) {
 
 }
