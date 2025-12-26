@@ -4,14 +4,21 @@
 
 struct widgetMain {
     GtkWidget *windowMain;
+    GtkWidget *gridParent;
 }widgetMain;
 static void activate (GtkApplication *app,gpointer user_data) {
 
     //Init of windowMain
     widgetMain.windowMain = gtk_application_window_new(app);
     gtk_window_set_title(GTK_WINDOW(widgetMain.windowMain),"NotSoNotChatty");
-    gtk_window_set_default_size(GTK_WINDOW(widgetMain.windowMain),800,800);
+    gtk_window_set_default_size(GTK_WINDOW(widgetMain.windowMain),800,700);
     gtk_window_present(GTK_WINDOW(widgetMain.windowMain));
+
+    //Init of gridParent
+    widgetMain.gridParent = gtk_grid_new();
+    gtk_window_set_child(GTK_WINDOW(widgetMain.windowMain),widgetMain.gridParent);
+
+
 
 }
 
